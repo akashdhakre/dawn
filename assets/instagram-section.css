@@ -1,0 +1,28 @@
+.instagram-grid-wrapper {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.instagram-grid-heading {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.instagram-grid__item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.instagram-grid__link:hover img {
+  transform: scale(1.05);
+}
