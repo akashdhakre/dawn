@@ -1,0 +1,70 @@
+{{ 'testimonials-carousel.css' | asset_url | stylesheet_tag }}
+
+{% schema %}
+{
+  "name": "Testimonials Carousel",
+  "tag": "section",
+  "class": "testimonials-carousel-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "What our customers say"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "Customer Photo"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Customer Name",
+          "default": "John Doe"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Testimonial",
+          "default": "This store is amazing! The quality and service exceeded my expectations."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Testimonials Carousel",
+      "category": "Text",
+      "blocks": [
+        { "type": "testimonial" },
+        { "type": "testimonial" }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="testimonials-carousel-wrapper page-width">
+  {% if section.settings.heading %}
+    <h2 class="testimonials-carousel-heading">{{ section.settings.heading }}</h2>
+  {% endif %}
+  <div class="testimonials-carousel">
+    {% for block in section.blocks %}
+      <div class="testimonial-slide">
+        {% if block.settings.photo %}
+          <img class="testimonial-photo" src="{{ block.settings.photo | image_url: width: 100 }}" alt="{{ block.settings.name }}" loading="lazy">
+        {% endif %}
+        <p class="testimonial-quote">"{{ block.settings.quote }}"</p>
+        <p class="testimonial-name">- {{ block.settings.name }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>

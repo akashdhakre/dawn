@@ -1,0 +1,45 @@
+.testimonials-carousel-wrapper {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.testimonials-carousel-heading {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.testimonials-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.testimonial-slide {
+  min-width: 250px;
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 10px;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.testimonial-photo {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.testimonial-quote {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-name {
+  font-weight: bold;
+  color: #333;
+}
