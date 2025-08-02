@@ -1,6 +1,7 @@
 {{ 'instagram-section.css' | asset_url | stylesheet_tag }}
 
 <div class="instagram-grid-wrapper page-width">
+  <h2>{{ section.settings.section_heading }}</h2>
   <div class="instagram-grid">
     {% for block in section.blocks %}
       {% if block.settings.image %}
